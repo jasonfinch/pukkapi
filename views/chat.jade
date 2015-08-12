@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .container
+  br
+  .jumbotron
+    if (!user)
+      p Sorry but you must login first to use this chat page
+      a(href="/auth/login") Login
+      br
+      a(href="/register") Register
+    if (user)
+      h1 Chat
+      h2 You are currently logged in as #{user.username}
+      p welcome to the chat page.
+      a(href="/chat/room") Rooms
+  include ./footer.jade

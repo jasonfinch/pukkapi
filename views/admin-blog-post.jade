@@ -1,0 +1,17 @@
+// /views/admin-blog-post
+
+// Displays a single post by id
+
+extends layout
+
+block content
+  br
+  .container
+      div.blog-article
+        div.blog-title 
+          a(href="/admin/blog/post/"+article._id.toHexString())!= article.title
+        div.body
+          p= article.content
+        div.created_at= article.date
+  br
+  include ./footer.jade

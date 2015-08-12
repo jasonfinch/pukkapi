@@ -1,0 +1,61 @@
+// /views/blog-post.jade
+
+// Shows a single blog post by id
+
+extends layout
+block content
+  .container
+    #masthead
+      .container
+            h1
+              | Blog
+              p.lead Catchy Subtitle Here
+      .row
+        br
+        .col-md-2.col-sm-3.text-center
+          a.story-img(href='#')
+            img.img-circle(src='/images/app/c1fda07eb4cc4a446355985e6862701c.jpeg', style='width:100px;height:100px')
+        .col-md-10.col-sm-9
+          h3 
+            p= article.title
+          .row
+            .col-xs-9
+              p
+                p= article.content
+              p.pull-right
+                span.label.label-default keyword
+                span.label.label-default tag
+                span.label.label-default post
+              ul.list-inline
+                li
+                  span Posted by 
+                  a(href='#')= article.author
+                li
+                  a(href='#') 2 Days Ago
+                li
+                  a(href='#')
+                    i.glyphicon.glyphicon-comment
+                    |  4 Comments
+                li
+                  a(href='#')
+                    i.glyphicon.glyphicon-share
+                    |  34 Shares
+            br
+      #disqus_thread
+      script(type='text/javascript').
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'pukkapicom';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      noscript
+        | Please enable JavaScript to view the 
+        a(href='https://disqus.com/?ref_noscript', rel='nofollow') comments powered by Disqus.
+      hr      
+    a(href='#') Back to top
+       
+  include ./footer.jade
+

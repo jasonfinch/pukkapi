@@ -1,0 +1,91 @@
+// /views/admin-phonedata-all.jade
+
+//displays all phone data in table and graph form
+
+extends layout
+block content
+  br
+  include ./admin_nav.jade
+  .container
+    h2 Phone data
+    p Updated every 5 minutes approximately, providing the signal don't fuck up.
+    h3 Location
+    p locations are given in coordinates
+    table.table.table-striped
+      thead
+        tr
+          th Data
+          th Time
+          th Location
+      tbody
+      - each phone in phones
+        tr
+          td= phone.phonedate
+          td=phone.time
+          td= phone.loc
+    br
+    a(href='#') Back to top
+    br
+    h3 Phone health
+    p Just the usual things.
+    br
+    table.table.table-striped.table-condensed
+      thead
+        tr
+          th Data
+          th Time
+          th Battery
+          th Mem
+          th Cell Status
+      tbody
+      - each phone in phones
+        tr
+          td= phone.phonedate
+          td=phone.time
+          td= phone.battery
+          td= phone.mem
+          td= phone.cell_status
+    br
+    a(href='#') Back to top
+    br
+    h3 Sensor values
+    p Pressure: hPa, 1 hPa = 1 mbar
+    br
+    table.table.table-striped
+      thead
+        tr
+          th Data
+          th Time
+          th Pressure
+          th Lux
+          th Altitude
+      tbody
+      - each phone in phones
+        tr
+          td= phone.phonedate
+          td=phone.time
+          td= phone.pressure
+          td= phone.luminosity
+          td= phone.altitude
+    br
+    a(href='#') Back to top
+    br
+    h3 Signal 
+    br
+    table.table.table-striped
+      thead
+        tr
+          th Data
+          th Time
+          th Mast
+          th Signal
+      tbody
+      - each phone in phones
+        tr
+          td= phone.phonedate
+          td= phone.time
+          td= phone.cell_id
+          td= phone.signal
+      br
+  a(href='#') Back to top
+  include ./footer

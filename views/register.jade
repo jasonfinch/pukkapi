@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    .container
+    br
+    if (user)
+    if (user.isAdmin) == false
+      p Sorry but you must an administrator to view this page.
+      a(href="/auth/login") Login
+      include ./footer.jade
+    if (user)
+    if (user.isAdmin) == true
+    include ./admin_nav.jade
+    br
+    h1 Add a new user
+    span Like it says on the tin.
+    br
+    br
+    form(role='form', action="/admin/user/new",method="post", style='max-width: 300px;')
+      .form-group
+          input.form-control(type='text', name="username", placeholder='Enter Username')
+      .form-group
+          input.form-control(type='text', name="email", placeholder='Email')
+      .form-group
+        input.form-control(type='password', name="password", placeholder='Password')
+      button.btn.btn-default(type='submit') Submit &nbsp;
+      a(href='/admin')
+        button.btn.btn-primary(type="button") Cancel
+      div
+      if (info)
+         br
+         .alert.alert-dismissable.alert-info
+           button.close( type="button", data-dismiss="alert" ) ×
+           | #{info}
+    include ./footer.jade

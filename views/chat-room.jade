@@ -1,0 +1,93 @@
+// /views/chat-room.jade
+
+shows chat rooms EXP!!
+  title Pukkapi - chat
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/spacelab/bootstrap.css')
+  link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', rel='stylesheet')
+  link(href='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css', rel='stylesheet')
+  style.
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages li { padding: 5px 10px; }
+    .messages li:nth-child(odd) { background: #eee; }
+    .chat-padding { padding: 10px; }
+    .enjoy-css {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal 100%/normal Arial, Helvetica, sans-serif;
+    color: #000;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-radial-gradient(100% 150%, circle, rgb(165,207,249) 24%, #FFFFFF 25%, #FFFFFF 28%, rgb(165,207,249) 29%, rgb(165,207,249) 36%, #FFFFFF 36%, #FFFFFF 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -webkit-radial-gradient(0 150%, circle, rgb(165,207,249) 24%, #FFFFFF 25%, #FFFFFF 28%, rgb(165,207,249) 29%, rgb(165,207,249) 36%, #FFFFFF 36%, #FFFFFF 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -webkit-radial-gradient(50% 100%, circle, #FFFFFF 10%, rgb(165,207,249) 11%, rgb(165,207,249) 23%, #FFFFFF 24%, #FFFFFF 30%, rgb(165,207,249) 31%, rgb(165,207,249) 43%, #FFFFFF 44%, #FFFFFF 50%, rgb(165,207,249) 51%, rgb(165,207,249) 63%, #FFFFFF 64%, #FFFFFF 71%, rgba(0,0,0,0) 71%, rgba(0,0,0,0) 100%), -webkit-radial-gradient(100% 50%, circle, #FFFFFF 5%, rgb(165,207,249) 6%, rgb(165,207,249) 15%, #FFFFFF 16%, #FFFFFF 20%, rgb(165,207,249) 21%, rgb(165,207,249) 30%, #FFFFFF 31%, #FFFFFF 35%, rgb(165,207,249) 36%, rgb(165,207,249) 45%, #FFFFFF 46%, #FFFFFF 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), -webkit-radial-gradient(0 50%, circle, #FFFFFF 5%, rgb(165,207,249) 6%, rgb(165,207,249) 15%, #FFFFFF 16%, #FFFFFF 20%, rgb(165,207,249) 21%, rgb(165,207,249) 30%, #FFFFFF 31%, #FFFFFF 35%, rgb(165,207,249) 36%, rgb(165,207,249) 45%, #FFFFFF 46%, #FFFFFF 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), rgb(165, 207, 249);
+    background: -moz-radial-gradient(100% 150%, circle, rgb(165,207,249) 24%, #FFFFFF 25%, #FFFFFF 28%, rgb(165,207,249) 29%, rgb(165,207,249) 36%, #FFFFFF 36%, #FFFFFF 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -moz-radial-gradient(0 150%, circle, rgb(165,207,249) 24%, #FFFFFF 25%, #FFFFFF 28%, rgb(165,207,249) 29%, rgb(165,207,249) 36%, #FFFFFF 36%, #FFFFFF 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), -moz-radial-gradient(50% 100%, circle, #FFFFFF 10%, rgb(165,207,249) 11%, rgb(165,207,249) 23%, #FFFFFF 24%, #FFFFFF 30%, rgb(165,207,249) 31%, rgb(165,207,249) 43%, #FFFFFF 44%, #FFFFFF 50%, rgb(165,207,249) 51%, rgb(165,207,249) 63%, #FFFFFF 64%, #FFFFFF 71%, rgba(0,0,0,0) 71%, rgba(0,0,0,0) 100%), -moz-radial-gradient(100% 50%, circle, #FFFFFF 5%, rgb(165,207,249) 6%, rgb(165,207,249) 15%, #FFFFFF 16%, #FFFFFF 20%, rgb(165,207,249) 21%, rgb(165,207,249) 30%, #FFFFFF 31%, #FFFFFF 35%, rgb(165,207,249) 36%, rgb(165,207,249) 45%, #FFFFFF 46%, #FFFFFF 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), -moz-radial-gradient(0 50%, circle, #FFFFFF 5%, rgb(165,207,249) 6%, rgb(165,207,249) 15%, #FFFFFF 16%, #FFFFFF 20%, rgb(165,207,249) 21%, rgb(165,207,249) 30%, #FFFFFF 31%, #FFFFFF 35%, rgb(165,207,249) 36%, rgb(165,207,249) 45%, #FFFFFF 46%, #FFFFFF 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), rgb(165, 207, 249);
+    background: radial-gradient(circle at 100% 150%, rgb(165,207,249) 24%, #FFFFFF 25%, #FFFFFF 28%, rgb(165,207,249) 29%, rgb(165,207,249) 36%, #FFFFFF 36%, #FFFFFF 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), radial-gradient(circle at 0 150%, rgb(165,207,249) 24%, #FFFFFF 25%, #FFFFFF 28%, rgb(165,207,249) 29%, rgb(165,207,249) 36%, #FFFFFF 36%, #FFFFFF 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%), radial-gradient(circle at 50% 100%, #FFFFFF 10%, rgb(165,207,249) 11%, rgb(165,207,249) 23%, #FFFFFF 24%, #FFFFFF 30%, rgb(165,207,249) 31%, rgb(165,207,249) 43%, #FFFFFF 44%, #FFFFFF 50%, rgb(165,207,249) 51%, rgb(165,207,249) 63%, #FFFFFF 64%, #FFFFFF 71%, rgba(0,0,0,0) 71%, rgba(0,0,0,0) 100%), radial-gradient(circle at 100% 50%, #FFFFFF 5%, rgb(165,207,249) 6%, rgb(165,207,249) 15%, #FFFFFF 16%, #FFFFFF 20%, rgb(165,207,249) 21%, rgb(165,207,249) 30%, #FFFFFF 31%, #FFFFFF 35%, rgb(165,207,249) 36%, rgb(165,207,249) 45%, #FFFFFF 46%, #FFFFFF 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), radial-gradient(circle at 0 50%, #FFFFFF 5%, rgb(165,207,249) 6%, rgb(165,207,249) 15%, #FFFFFF 16%, #FFFFFF 20%, rgb(165,207,249) 21%, rgb(165,207,249) 30%, #FFFFFF 31%, #FFFFFF 35%, rgb(165,207,249) 36%, rgb(165,207,249) 45%, #FFFFFF 46%, #FFFFFF 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), rgb(165, 207, 249);
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 100px 50px;
+    background-size: 100px 50px;
+    }
+  body
+    .container
+    // header
+    nav.navbar-default(role='navigation')
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/') Pukkapi
+      // Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li.active
+            a(href='/chat') Chat
+          li
+            a(href='/users') Users
+          li
+            a(href='/blog') Blog
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='http://home.pukkapi.com:3000/auth/login') Logout
+    br
+    .container
+      .jumbotron
+        h2 Chat
+        .chat-padding
+          span Talk your little heart out.
+        ul#messages.enjoy-css
+        .chat-padding  
+        form.form-inline(role='form', action='')
+          label(for='m') Message:
+          input#m.form-control(autocomplete='off')
+          button.btn.btn-default Send
+        script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+        script(src='http://code.jquery.com/jquery-1.11.1.js')
+        script.
+          var socket = io();
+          $('form').submit(function(){
+          socket.emit(('chat message','username'), $('#m').val());
+          $('#m').val('');
+          return false;
+          });
+          socket.on(('chat message','username'), function(msg){
+          $('#messages').append($('<li>').text(msg));
+          });
+      .footer
+        p
+          | Designed and built with all the love in the world by 
+          a(href='http://www.jasonfinch.me', target='_blank') Jason Finch
+        p
+          | Using 
+          a(href='http://nodejs.org') Node.js, 
+          a(href='http://nodejs.org') Express, 
+          a(href='http://nodejs.org') Mongodb,
+          br
+          a(href='http://nodejs.org') Socketio, 
+          a(href='http://nodejs.org') Jade, 
+          a(href='http://nodejs.org') Bootstrap,
+        p and a whole lot of other goodies.

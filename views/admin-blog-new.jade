@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  br
+  include ./admin_nav.jade
+  h1 New blog post
+    p.lead Oh, so you want to make a new blog post do you?.
+    form(role='form', action="/admin/blog/new",method="post", style='max-width: 300px;')
+      .form-group
+        input.form-control(type='text', name="title", placeholder='Enter Enter title')
+      .form-group
+        textarea#content.form-control(name="content", placeholder="Post content", rows="5")
+      .form-group
+        input.form-control(type='text', name="author", placeholder='Author')
+      .form-group
+        input#draft_box(type='checkbox', value='true', name='draft', checked='false', placeholder='Published?')
+      .form-group
+        .button-clr 
+          button.btn.btn-default(type='submit') Submit
+  include ./footer.jade

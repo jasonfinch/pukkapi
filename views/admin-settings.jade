@@ -1,0 +1,11 @@
+// /views/admin-settings.jade
+// displays server wide settings
+
+extends layout
+
+block content
+  .container
+  br
+  h1 App settings
+    p= jsonContent.app.dbConfig.host
+  include ./footer.jade

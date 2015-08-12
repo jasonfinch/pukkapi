@@ -1,0 +1,164 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.navbar-brand{
+ font-family: lobster;
+ font-size: 22px;
+}
+
+.navbar-btn{margin-left: 10px; margin-right: 15px;}
+
+.button-clr{margin-top: 20px;}
+
+.jumbotron{padding-top: 24px;}
+
+.blog-title{
+  font-size: 20px;
+}
+
+.lead{
+  padding-left: 5px; 
+}
+
+.label{margin: 0 5px 0 5px;}
+
+.footer{
+  padding:20px;
+  margin: 20px 0 20px 0;
+  background-color: #FFFFFF;
+  overflow: none;
+  border-radius:5px;
+  border: 1px solid #303030;
+}
+.
+
+#masthead {}
+
+#masthead h1 {
+  font-size: 55px;
+  line-height: 1;
+  margin-top:20px;
+}
+
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages li { padding: 5px 10px; }
+.messages li:nth-child(odd) { background: #eee; }
+.chat-padding { padding: 10px; }
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+// social links
+.social {
+    margin: 0;
+    padding: 0;
+}
+
+.social ul {
+    margin-left:20px;
+    padding: 5px;
+}
+
+.social ul li {
+    margin: 20px;
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.social i {
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    background-color: #909AA0;
+    font-size: 22px;
+    text-align:center;
+    padding-top: 12px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+.social i:hover {
+    color: #FFF;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+.social .fa-facebook:hover {
+    background: #4060A5;
+}
+
+.social .fa-twitter:hover {
+    background: #00ABE3;
+}
+
+.social .fa-google-plus:hover {
+    background: #e64522;
+}
+
+.social .fa-github:hover {
+    background: #343434;
+}
+
+.social .fa-globe:hover {
+    background: #00CC00;
+}
+
+.social .fa-linkedin:hover {
+    background: #0094BC;
+}
+
+.social .fa-stack-overflow:hover {
+    background: #FEA501;
+}
+
+.social .fa-rss:hover {
+    background: #e88845;
+}
+
+#articles
+  text-align left
+  margin-left auto
+  margin-right auto
+  width 320px
+  .article
+    margin 20px
+    .created_at
+        display none
+    .title
+        font-weight bold
+        text-decoration underline
+        background-color #eee
+    .body
+        background-color #ffa

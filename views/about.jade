@@ -1,0 +1,19 @@
+// /views/about.jade
+
+// the obvious stuff
+
+extends layout
+
+block content
+  br
+  include ./admin_nav.jade
+  h1 About
+    small.lead All about us.
+  p home.pukkapi.com is automation and internet of things framework built mainly with:
+  a(href='http://nodejs.org') Node.js,&nbsp;
+  a(href='http://expressjs.com') Express,&nbsp;
+  a(href='http://www.mongodb.org') Mongodbo,&nbsp;
+  a(href='http://socket.io') Socket-io,
+  a(href='http://jade-lang.com/') Jade,&nbsp;
+  a(href='http://getbootstrap.com') Bootstrap.&nbsp;
+  include ./footer.jade

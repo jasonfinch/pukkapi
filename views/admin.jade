@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    br
+    if (user.isAdmin) == false
+        br
+        .jumbotron
+            p Sorry but you must an administrator to view this page.
+            a(href="/auth/login") Login
+    if (user.isAdmin) == true
+       include ./admin_nav.jade
+       br
+       h1 Admin
+       p Hello, welcome to the admin page #{user.username}.
+       span You can do whatever you want to do here, you do run the show afterall.
+    include ./footer.jade

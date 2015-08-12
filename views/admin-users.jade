@@ -1,0 +1,35 @@
+// /views/admin-users.jade
+
+// Displays all registered users
+
+extends layout
+block content
+  br
+  include ./admin_nav.jade
+  .container
+    #masthead
+      .container
+            h1
+              | Users
+              p.lead Yey...People
+    - each user in users
+      .row
+        br
+        .col-md-2.col-sm-3.text-center
+          a.story-img(href='#')
+            img.img-circle(src='http://a.sidereel.com/assets/avatars/default-avatar-cat-0117d4d7b0786b3984c92f440e8326f7.png', style='width:100px;height:100px')
+        .col-md-10.col-sm-9
+          .row
+            .col-xs-9
+              p
+                p= user.username
+              ul.list-inline
+                li 
+                  a(href='#') Delete
+                li
+                  a(href='#') Edit
+        hr      
+    a(href='#') Back to top
+       
+  include ./footer.jade
+

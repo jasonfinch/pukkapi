@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  br
+  .jumbotron 
+    h1 The duck died
+    h2= error.status
+    span= message
+    br
+    pre #{error.stack}
+  include ./footer.jade

@@ -1,0 +1,47 @@
+// header file includes the nav part in seperate file
+nav.navbar-default(role="navigation")
+  // Brand and toggle get grouped for better mobile display
+  .navbar-header
+    button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse")
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+  // Collect the nav links, forms, and other content for toggling
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    ul.nav.navbar-nav
+    ul.nav.navbar-nav.navbar-right
+      li.dropdown
+        a.dropdown-toggle(href="#" data-toggle="dropdown") Sections
+          b.caret
+        ul.dropdown-menu
+           li
+            a(href="/admin/phone-data") Phone Data
+           li
+            a(href="/admin/phone-sec") Phone Security
+           li
+            a(href="/admin/environment") Environment
+           li
+            a(href="/admin/security") Security
+          li
+            a(href="/admin/users") Users
+          li
+            a(href="/admin/blog") Blog
+      li.dropdown
+        a.dropdown-toggle(href="#" data-toggle="dropdown") New
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href="/admin/blog/new") New blog post
+          li
+            a(href="/admin/user/new") Add user
+          li
+            a(href="/admin/upload") Add image
+      li.dropdown
+        a.dropdown-toggle(href="/admin/settings" data-toggle="dropdown") Settings
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href="/admin/settings") Server config
+          li
+            a(href="/admin/test/ping") Ping

@@ -1,0 +1,58 @@
+// header file includes the nav part in seperate file
+nav.navbar-default(role="navigation")
+
+  // Brand and toggle get grouped for better mobile display
+  .navbar-header
+    button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse")
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+      
+    a.navbar-brand(href='#')
+    a.navbar-brand(href="/") Pukkapi
+    
+  // Collect the nav links, forms, and other content for toggling
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    ul.nav.navbar-nav
+      li
+        a(href="/blog") Blog
+      li
+        a(href="/sandbox") Sandbox
+      li
+        a(href="/about") About 
+      if (user)
+        li
+          a(href="/chat") Chat
+        li.dropdown
+          a.dropdown-toggle(href="#" data-toggle="dropdown") House 
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href="/") Action
+            li
+              a(href="/") Another action
+            li
+              a(href="/") Something else here
+            li
+              a(href="/") Separated link
+            li
+              a(href="/") One more separated link
+          if (user.isAdmin == true)
+            li
+              a(href='/admin') Admin
+
+    ul.nav.navbar-nav.navbar-right
+      if (!user)
+        li
+          form(action='/auth/login')
+            button.btn.btn-default.navbar-btn Login
+      if (user)
+        li  
+          a(href="/users/profile/#{user.username}") #{user.username}
+        li
+          form(action='/auth/logout')
+            button.btn.btn-default.navbar-btn Logout
+
+
+    br

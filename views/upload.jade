@@ -1,0 +1,22 @@
+// /views/upload.jade
+
+// Form to handle picture upload for app
+
+extends layout
+
+block content
+  br
+  include ./admin_nav.jade
+  h1= title
+  #info= message
+  if (message)
+        br
+        .alert.alert-success(role='alert')
+         a.alert-link(href='#') Click here to go back 
+         | #{message}
+  form(method="post" action="/admin/upload" enctype="multipart/form-data",  style='max-width: 500px;') 
+    label(for="payload") Select a file to upload:     
+    input.btn.btn-default(type="file" name="myFile" accept="image/*") 
+    br 
+    button.btn.btn-default Upload
+  include ./footer.jade

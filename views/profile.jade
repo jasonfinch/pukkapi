@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+  br
+  .jumbotron
+    if (!user)
+      p you should not be here
+    if (user)
+      br
+      h1 Profile
+      p You are currently logged in as #{user.username}
+      span hello #{user.username}, welcome to the to your profile page.
+  include ./footer.jade

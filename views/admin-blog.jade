@@ -1,0 +1,60 @@
+extends layout
+block content
+  br
+  include ./admin_nav.jade
+  .container
+    #masthead
+      .container
+            h1
+              | Blog
+              p.lead Catchy Subtitle Here
+    - each article in articles
+      .row
+        br
+        .col-md-2.col-sm-3.text-center
+          a.story-img(href='#')
+            img.img-circle(src='http://home.pukkapi.com:3000/images/app/c1fda07eb4cc4a446355985e6862701c', style='width:100px;height:100px')
+        .col-md-10.col-sm-9
+          h3 
+            a(href="/admin/blog/post/"+article._id.toHexString())!= article.title
+          .row
+            .col-xs-9
+              p
+                p= article.content
+              p.pull-right
+                span.label.label-default keyword
+                span.label.label-default tag
+                span.label.label-default post
+              ul.list-inline
+                li
+                  span Posted by 
+                  a(href='#')= article.author
+                li
+                  a(href='#') 2 Days Ago
+                li
+                  a(href='#')
+                    i.glyphicon.glyphicon-comment
+                    |  4 Comments
+                li
+                  a(href='#')
+                    i.glyphicon.glyphicon-share
+                    |  34 Shares
+                li
+                  a(href='#')
+                    i.glyphicon.glyphicon-pencil
+                    |  Edit
+                li
+                  a(href="/admin/blog/post/delete/"+article._id.toHexString())!= article.title
+                    i.glyphicon.glyphicon-trash
+                    |  Delete
+              .col-xs-3
+                div.created_at= article.date
+            br
+            br
+        hr      
+    a(href='#') Back to top
+       
+  include ./footer.jade
+
+
+

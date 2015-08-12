@@ -1,0 +1,10 @@
+{
+  "app": {
+    "dbConfig": {
+      "host": "mongodb://localhost:27017/pukkapi"
+    },
+    "serverConfig": {
+      "port": 3000
+    }
+  }
+}
