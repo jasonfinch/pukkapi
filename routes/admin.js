@@ -16,8 +16,7 @@ router.use(bodyParser.json()); // support json encoded bodies
 router.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // middleware function placed directly on route, initialized by multer
-var mwMulter1 = multer({ dest: './public/images/app/' });
-//var upload_dest = multer({ dest: './public/images/app/' });
+var upload = multer({ dest: './public/images/app/' });
 
 router.get('/',
 	ensure.ensureLoggedIn('/auth/login'),
@@ -170,40 +169,17 @@ router.get('/upload', ensure.ensureLoggedIn('/auth/login'), function(req, res) {
     res.render("upload", {title: "I love files!"}); 
 }); 
 
-router.post('/upload', mwMulter1, function(req, res) {
 
-        console.log('IN POST (/upload)');
-        console.log(req.body);
-
-        var filesUploaded = 0;
-
-        if ( Object.keys(req.files).length === 0 ) {
-            console.log('no files uploaded');
-        } else {
-            console.log(req.files)
-
-            var files = req.files.file1;
-            if (!util.isArray(req.files.file1)) {
-                files = [ req.files.file1 ];
-            } 
-
-            filesUploaded = files.length;
-        }
-
-        res.json({ message: 'Finished! Uploaded ' + filesUploaded + ' files.  Route is /upload' });
-});
-
-
-//router.get('/upload', ensure.ensureLoggedIn('/auth/login'), function(req, res) { 
-// res.render("upload", {title: "I love files!"}); 
-//}); 
+router.get('/upload', ensure.ensureLoggedIn('/auth/login'), function(req, res) { 
+ res.render("upload", {title: "I love files!"}); 
+}); 
  
-//router.post('/upload', upload.single('myFile'), function (req, res, next) {
-  // req.file is the `avatar` file
+router.post('/upload', upload.single('myFile'), function (req, res, next) {
+  //req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
-//  console.log(req.file);
-//  res.render("upload", {title: "I love files!",message: "Upload complete."}); 
-//})
+  console.log(req.file);
+     res.render("upload", {title: "I love files!",message: "Upload complete."}); 
+});
 
 // settings/config
 router.get('/settings', ensure.ensureLoggedIn('/auth/login'), function(req, res) {
