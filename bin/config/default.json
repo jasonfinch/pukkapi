@@ -1,10 +1,10 @@
 {
   "app": {
     "dbConfig": {
-      "host": "mongodb://localhost:27017/pukkapi"
+      "host": "mongodb://localhost:27017/databasenamehere"
     },
     "serverConfig": {
-      "port": 3000
+      "port": 1337
     }
   }
 }
